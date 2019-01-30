@@ -11,8 +11,8 @@ namespace TreeGeneric.BussinessLogic
 {
     public class PlantingService : IPlantingService
     {
-        private readonly IPlantingRepository repository;
-        public PlantingService(IPlantingRepository repository)
+        private readonly IRepository<Planting> repository;
+        public PlantingService(IRepository<Planting> repository)
         {
             this.repository = repository;
         }

@@ -9,6 +9,10 @@ namespace TreeGeneric.Model
 {
     public class TreeType:BaseEntity
     {
+        public TreeType()
+        {
+            Regions = new HashSet<Region>();
+        }
         [Display(Name = "Fidan Adı")]
         public string Name { get; set; }
         [Display(Name = "Fidan Açıklaması")]
@@ -29,7 +33,6 @@ namespace TreeGeneric.Model
         public int AvailabilityCount { get; set; }
         public virtual ICollection<Donation> Donations { get; set; }
 
-        public int RegionId { get; set; }
-        public virtual Region Region { get; set; }
+        public virtual ICollection<Region> Regions { get; set; }
     }
 }

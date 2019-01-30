@@ -14,7 +14,7 @@ namespace TreeGeneric.Data.Builders
         {
             entity.Property(p => p.Name).IsRequired().HasMaxLength(200);
             entity.Property(p => p.Photo).IsRequired().HasMaxLength(200);
-            entity.HasRequired(p => p.Region).WithMany(m => m.TreeTypes).HasForeignKey(p => p.RegionId).WillCascadeOnDelete(false);
+            entity.HasMany(t => t.Regions).WithMany(r => r.TreeTypes);
         }
     }
 }
